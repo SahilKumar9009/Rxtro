@@ -1,10 +1,10 @@
-import {Platform, Pressable, Text, View} from 'react-native';
-import {isTablet} from 'react-native-device-info';
-import styled from 'styled-components/native';
-import {SPACING, mainBackgroundColor} from '../../constants';
+import { Platform, Pressable, Text, View } from "react-native";
+// import {isTablet} from 'react-native-device-info';
+import styled from "styled-components/native";
+import { SPACING, isTablet, mainBackgroundColor } from "../../constants";
 
 const marginValue =
-  Platform.OS === 'ios' ? (Platform.isPad ? 22 : 32) : isTablet() ? 22 : 32;
+  Platform.OS === "ios" ? (Platform.isPad ? 22 : 32) : isTablet ? 22 : 32;
 
 const Container = styled.View`
   width: 75%;

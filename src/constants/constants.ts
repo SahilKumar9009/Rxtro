@@ -1,15 +1,15 @@
-import {Dimensions} from 'react-native';
-import DeviceInfo from 'react-native-device-info';
-import {getCountry} from 'react-native-localize';
+import { Dimensions } from "react-native";
+// import DeviceInfo from 'react-native-device-info';
+// import { getCountry } from "react-native-localize";
 
-export const isTablet = DeviceInfo.isTablet();
-const {width: screenWidth, height: screenHeight} = Dimensions.get('screen');
+export const isTablet = false;
+const { width: screenWidth, height: screenHeight } = Dimensions.get("screen");
 export const DIMENSIONS = {
-  WINDOW_HEIGHT: Dimensions.get('window').height,
-  WINDOW_WIDTH: Dimensions.get('window').width,
+  WINDOW_HEIGHT: Dimensions.get("window").height,
+  WINDOW_WIDTH: Dimensions.get("window").width,
 };
-export const ACCESS_TOKEN = 'accessToken';
-const country = 'au'; // !  getCountry().toLowerCase();
+export const ACCESS_TOKEN = "accessToken";
+const country = "au"; // !  getCountry().toLowerCase();
 
 // export const API_BASE_URL = `https://${country}.rxtro.com/api/jsonws`;
 
@@ -25,19 +25,19 @@ export const IMAGE_BASE_URL = `https://staging.rxtro.com/ `;
 // export const IMAGE_BASE_URL = 'https://staging.rxtro.com';
 
 // export const mainBackgroundColor = '#1F6D9C';
-export const mainBackgroundColor = '#2B3990';
-export const whiteBackgroundcolor = '#F5F7FB';
-export const successButtonColor = '#0BB07B';
-export const successButtonBorderColor = '#00865A';
-export const commonBorderColor = '#D8D8D8';
-export const blueColor = '#006CE6';
-export const secondaryFontColor = '#8A94A6';
-export const DEVICE_TOKEN = 'deviceToken';
-export const DEVICE_ID = 'deviceId';
-export const FCM_TOKEN = 'fcmToken';
-export const USER_ID = 'userId';
-export const EMAIL_ID = 'email';
-export const PASSWORD = 'password';
+export const mainBackgroundColor = "#2B3990";
+export const whiteBackgroundcolor = "#F5F7FB";
+export const successButtonColor = "#0BB07B";
+export const successButtonBorderColor = "#00865A";
+export const commonBorderColor = "#D8D8D8";
+export const blueColor = "#006CE6";
+export const secondaryFontColor = "#8A94A6";
+export const DEVICE_TOKEN = "deviceToken";
+export const DEVICE_ID = "deviceId";
+export const FCM_TOKEN = "fcmToken";
+export const USER_ID = "userId";
+export const EMAIL_ID = "email";
+export const PASSWORD = "password";
 
 export const FONT_SIZE = {
   f3: (screenWidth < screenHeight ? screenWidth : screenHeight) / 100,
@@ -149,26 +149,24 @@ export const HEIGHT = {
 };
 
 export enum CUSTOMER_IO {
-  SITE_ID = '7b3a0ec87934147bbe33',
-  API_KEY = '7f14785be2797bfcd856',
+  SITE_ID = "7b3a0ec87934147bbe33",
+  API_KEY = "7f14785be2797bfcd856",
 }
 
 export const Colors = {
-  WHITE: '#ffffff',
-  BLACK_TEXT: '#070F37',
-  RED_COLOR: 'red',
+  WHITE: "#ffffff",
+  BLACK_TEXT: "#070F37",
+  RED_COLOR: "red",
 };
 
 const images = {
-  Calendar: require('../assets/calendar.png'),
+  Calendar: require("../assets/calendar.png"),
 };
 
-
-
 export enum ScreenNames {
- APPOINTMENT =  "Appointment",
- MYCUSTOMER ="My Customer",
- REQUEST ="Request",
- NOTIFICATION="Notifications",
- ADDCLINIC = "Add Clinic"
+  APPOINTMENT = "Appointment",
+  MYCUSTOMER = "My Customer",
+  REQUEST = "Request",
+  NOTIFICATION = "Notifications",
+  ADDCLINIC = "Add Clinic",
 }

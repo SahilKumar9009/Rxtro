@@ -10,7 +10,7 @@ import {
 } from '../constants';
 import {getRepresentativeProfile} from './representativeProfile';
 import axios from 'axios';
-import {CustomerIO} from 'customerio-reactnative';
+// import {CustomerIO} from 'customerio-reactnative';
 
 type args = {
   drugRepId: string | null;
@@ -39,10 +39,10 @@ export const postEditProfile =
         )
         .then(res => {
           if (res['internal-code'] === 200) {
-            CustomerIO.track('user-profile-edited', {
-              email: email,
-              type: 'Profile photo updated',
-            });
+            // CustomerIO.track('user-profile-edited', {
+            //   email: email,
+            //   type: 'Profile photo updated',
+            // });
             dispatch({
               type: REDUCER.POST_EDIT_PROFILE_SUCCESS,
               payload: res,

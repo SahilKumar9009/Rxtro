@@ -1,6 +1,6 @@
-import {CustomerIO} from 'customerio-reactnative';
-import api from '../api';
-import {REDUCER} from '../constants';
+// import {CustomerIO} from 'customerio-reactnative';
+import api from "../api";
+import { REDUCER } from "../constants";
 
 type args = {
   surgeryId: number;
@@ -10,26 +10,26 @@ type args = {
 };
 
 export const postTakeAppointment =
-  ({surgeryId, drugRepId, scheduleId, appDate}: args) =>
-  dispatch => {
+  ({ surgeryId, drugRepId, scheduleId, appDate }: args) =>
+  (dispatch) => {
     try {
-      const data = {surgeryId, drugRepId, scheduleId, appDate};
+      const data = { surgeryId, drugRepId, scheduleId, appDate };
       api
-        .postAuthorizedFormData('wx.appointment/take-app', {
+        .postAuthorizedFormData("wx.appointment/take-app", {
           surgeryId,
           drugRepId,
           scheduleId,
           appDate,
         })
-        .then(res => {
-          if (res['internal-code'] === 200) {
+        .then((res) => {
+          if (res["internal-code"] === 200) {
             dispatch({
               type: REDUCER.POST_TAKE_APPOINTMENT_SUCCESS,
               payload: res,
             });
-            CustomerIO.track('take-appointment', {
-              ...data,
-            });
+            // CustomerIO.track('take-appointment', {
+            //   ...data,
+            // });
           } else {
             dispatch({
               type: REDUCER.POST_TAKE_APPOINTMENT_FAILED,
@@ -46,5 +46,6 @@ export const postTakeAppointment =
   };
 
 export function postTakeAppointmentLoading() {
-  return dispatch => dispatch({type: REDUCER.POST_TAKE_APPOINTMENT_LOADING});
+  return (dispatch) =>
+    dispatch({ type: REDUCER.POST_TAKE_APPOINTMENT_LOADING });
 }

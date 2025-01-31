@@ -1,4 +1,4 @@
-import {CustomerIO} from 'customerio-reactnative';
+// import {CustomerIO} from 'customerio-reactnative';
 import {REDUCER} from '../../constants';
 import { post } from '../../api2';
 import { BASE_URL } from '../../constants/api';

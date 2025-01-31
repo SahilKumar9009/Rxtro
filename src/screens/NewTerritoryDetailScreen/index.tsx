@@ -27,7 +27,6 @@ import Arrow from '../../assets/Svg/Arrow';
 import TerritorySort from '../../components/TerritorySort';
 import navigateTo from '../../navigation/navigate';
 import LoadingIndicator from '../../components/LoadingIndicator';
-import {isTablet} from 'react-native-device-info';
 import {
   getAvailableAppointments,
   getAvailableAppointmentsLoading,
@@ -37,7 +36,7 @@ import {Cell, Line, Row, styles} from './styled';
 import getTerritory from '../../apiActions/getTerritory';
 import RNText from '../../components/RNText';
 import AppointmentIpad from '../../components/AppointmentIpad';
-import {SPACING, USER_ID, WIDTH} from '../../constants';
+import {isTablet, SPACING, USER_ID, WIDTH} from '../../constants';
 import {Table} from '../../components/AppointmentIpad/styled';
 
 type ReduxState = ReturnType<typeof combineReducer>;
@@ -284,7 +283,7 @@ const NewTerritoryDetailScreen = ({meetingType, setDetailScreen, docterId}) => {
           paddingBottom: SPACING.h150,
         }}
         renderItem={({item, index}) => {
-          if (isIpadLandscape || isTablet()) {
+          if (isIpadLandscape || isTablet) {
             return <AppointmentIpad item={item} index={index} />;
           } else {
             return <AppointmentItem item={item} index={index} />;

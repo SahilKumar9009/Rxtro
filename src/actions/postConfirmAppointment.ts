@@ -1,4 +1,4 @@
-import {CustomerIO} from 'customerio-reactnative';
+// import {CustomerIO} from 'customerio-reactnative';
 import api from '../api';
 import {REDUCER} from '../constants';
 
@@ -15,10 +15,10 @@ export const postConfirmAppointment =
         .postAuthorizedFormData('wx.appointment/confirm-app', {appId})
         .then(res => {
           if (res['internal-code'] === 200) {
-            CustomerIO.track('confirm-appointment', {
-              ...appointmentDetails,
-              appointmentID: appId,
-            });
+            // CustomerIO.track('confirm-appointment', {
+            //   ...appointmentDetails,
+            //   appointmentID: appId,
+            // });
             dispatch({
               type: REDUCER.POST_CONFIRM_APPOINTMENT_SUCCESS,
               payload: res,
